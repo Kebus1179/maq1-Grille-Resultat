@@ -14,12 +14,14 @@ class DemoItem extends Component {
     };
     this.createTasks = this.createTasks.bind(this);
   }
-  createTasks(item) {
-    return <li key={item.key}>{item.text}</li>;
+  createTasks(item, i) {
+    console.log(i);
+    return <button key={i}>{item}</button>;
   }
+
   render() {
     var todoEntries = this.props.entries;
-    var listItems = todoEntries.map(this.createTasks);
+    var listItems = todoEntries.map((p, i) => this.createTasks(p, i));
 
     return (
       <div>
