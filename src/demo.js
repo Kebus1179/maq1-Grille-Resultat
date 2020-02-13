@@ -15,8 +15,7 @@ class Demo extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
-    this.navOpen = this.navOpen.bind(this);
-    this.navOpen2 = this.navOpen2.bind(this);
+
   }
 
   handleChange(event: object, expanded: boolean) {
@@ -45,22 +44,6 @@ class Demo extends Component {
     }
   };
 
-  navOpen(parm) {
-    console.log("Fonction navOpen - Click Panel 1");
-    //   console.log(parm);
-    //const val = "panel1";
-    this.setState({
-      expanded: "panel1"
-    });
-  }
-  navOpen2(parm) {
-    console.log("Fonction navOpen2 - Click Panel 2");
-    //   console.log(parm);
-    //const val = "panel1";
-    this.setState({
-      expanded: "panel2"
-    });
-  }
 
   render() {
     return (
@@ -68,7 +51,6 @@ class Demo extends Component {
         <ExpansionPanel
           expanded={this.state.expanded === "panel1"}
           onChange={this.handleChange2("panel1")}
-          //     onClick={this.navOpen}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
@@ -84,7 +66,6 @@ class Demo extends Component {
         <ExpansionPanel
           expanded={this.state.expanded === "panel2"}
           onChange={this.handleChange2("panel2")}
-          //  onClick={this.navOpen2}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
