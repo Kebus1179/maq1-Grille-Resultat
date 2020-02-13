@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { render } from "react-dom";
+import DemoItem from "./demoItem";
 
 class Demo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false
+      expanded: false,
+      listItem: ["item1", "item2"]
     };
     this.handleChange = this.handleChange.bind(this);
+    //    this.addItem = this.addItem.bind(this);
   }
 
   handleChange = (panel: string) => (
@@ -33,10 +35,16 @@ class Demo extends Component {
     }
   };
 
-
   render() {
     return (
       <div>
+        <div>
+          <p>toto</p>
+
+          <DemoItem entries={this.state.listItem} />
+          <p>titi</p>
+        </div>
+
         <ExpansionPanel
           expanded={this.state.expanded === "panel1"}
           onChange={this.handleChange("panel1")}
