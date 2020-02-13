@@ -60,6 +60,8 @@ class Demo extends Component {
             <Typography>Details panel 1</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
+
+        
         <ExpansionPanel
           expanded={this.state.expanded === "panel2"}
           onChange={this.handleChange("panel2")}
