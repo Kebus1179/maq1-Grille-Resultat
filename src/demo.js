@@ -14,20 +14,9 @@ class Demo extends Component {
       expanded: false
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleChange2 = this.handleChange2.bind(this);
-
   }
 
-  handleChange(event: object, expanded: boolean) {
-    //  console.log("Appel de la fonction change");
-    // if (event.target.props.) {
-    //   console.log("Expanded");
-    // }
-    //    console.log(event);
-    return null;
-  }
-
-  handleChange2 = (panel: string) => (
+  handleChange = (panel: string) => (
     event: React.ChangeEvent<{}>,
     isExpanded: boolean
   ) => {
@@ -50,7 +39,7 @@ class Demo extends Component {
       <div>
         <ExpansionPanel
           expanded={this.state.expanded === "panel1"}
-          onChange={this.handleChange2("panel1")}
+          onChange={this.handleChange("panel1")}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
@@ -65,7 +54,7 @@ class Demo extends Component {
         </ExpansionPanel>
         <ExpansionPanel
           expanded={this.state.expanded === "panel2"}
-          onChange={this.handleChange2("panel2")}
+          onChange={this.handleChange("panel2")}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
