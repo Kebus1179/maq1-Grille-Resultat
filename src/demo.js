@@ -34,10 +34,19 @@ class Demo extends Component {
   ) => {
     //    setExpanded(isExpanded ? panel : false);
     console.log("onChange: " + panel);
+    if (this.state.expanded === panel) {
+      this.setState({
+        expanded: false
+      });
+    } else {
+      this.setState({
+        expanded: panel
+      });
+    }
   };
 
   navOpen(parm) {
-    console.log("Fonction navOpen");
+    console.log("Fonction navOpen - Click Panel 1");
     //   console.log(parm);
     //const val = "panel1";
     this.setState({
@@ -45,7 +54,7 @@ class Demo extends Component {
     });
   }
   navOpen2(parm) {
-    console.log("Fonction navOpen2");
+    console.log("Fonction navOpen2 - Click Panel 2");
     //   console.log(parm);
     //const val = "panel1";
     this.setState({
@@ -59,7 +68,7 @@ class Demo extends Component {
         <ExpansionPanel
           expanded={this.state.expanded === "panel1"}
           onChange={this.handleChange2("panel1")}
-          onClick={this.navOpen}
+          //     onClick={this.navOpen}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
@@ -67,19 +76,15 @@ class Demo extends Component {
             id="panel1bh-header"
           >
             <Typography>General settings</Typography>
-            <Typography>I am an expansion panel</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
-            </Typography>
+            <Typography>Details panel 1</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
           expanded={this.state.expanded === "panel2"}
           onChange={this.handleChange2("panel2")}
-          onClick={this.navOpen2}
+          //  onClick={this.navOpen2}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
@@ -87,14 +92,9 @@ class Demo extends Component {
             id="panel2bh-header"
           >
             <Typography>Users</Typography>
-            <Typography>You are currently not an owner</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Donec placerat, lectus sed mattis semper, neque lectus feugiat
-              lectus, varius pulvinar diam eros in elit. Pellentesque convallis
-              laoreet laoreet.
-            </Typography>
+            <Typography>Details panel 2 </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
