@@ -4,6 +4,7 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Grid from "@material-ui/core/Grid";
 
 class DemoItem extends Component {
   constructor(props) {
@@ -52,19 +53,35 @@ class DemoItem extends Component {
           aria-controls="panel1bh-content"
           id={item}
         >
-          <Typography>
-            {item.HourStart} - {item.HourStop}
-          </Typography>
-          <Typography>{item.Company}</Typography>
-          <Typography align="right">
-            {item.Price} {item.Currency} {item.TypeFlight}
-          </Typography>
-          <Typography variant="subtitle1">
-            {" "}
-            {item.CityStart}-{item.CityStop}
-            {item.DureeFlight}
-          </Typography>
-          <Typography>{item.NbEscales}</Typography>
+          <Grid container spacing={1}>
+            <Grid item xs={1}>
+              <p>Icone</p>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography>
+                {item.HourStart} - {item.HourStop}
+                {item.Company}
+              </Typography>
+            </Grid>
+            <Grid item xs={2} />
+            <Grid item xs={1}>
+              <Typography>
+                {item.CityStart}-{item.CityStop}
+                {item.DureeFlight}
+              </Typography>
+            </Grid>
+            <Grid item xs={1} />
+            <Grid item xs={1}>
+              <Typography>{item.NbEscales}</Typography>
+            </Grid>
+            <Grid item xs={2} />
+            <Grid item xs={1}>
+              <Typography align="right">
+                {item.Price} {item.Currency} {item.TypeFlight}
+              </Typography>
+            </Grid>
+            <Grid item xs={1} />
+          </Grid>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>Details panel {item.id}</Typography>
