@@ -38,45 +38,7 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <div>
-          <p>toto</p>
-
-          <DemoItem entries={this.state.listItem} />
-          <p>titi</p>
-        </div>
-
-        <ExpansionPanel
-          expanded={this.state.expanded === "panel1"}
-          onChange={this.handleChange("panel1")}
-        >
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
-            <Typography>General settings</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>Details panel 1</Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-
-        
-        <ExpansionPanel
-          expanded={this.state.expanded === "panel2"}
-          onChange={this.handleChange("panel2")}
-        >
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2bh-content"
-            id="panel2bh-header"
-          >
-            <Typography>Users</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>Details panel 2 </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+        <DemoItem entries={this.state.listItem} />
       </div>
     );
   }
