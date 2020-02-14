@@ -33,7 +33,7 @@ class DemoItem extends Component {
     }
   };
 
-  createTasks2(item, i) {
+  createTasks(item, i) {
     valExp = false;
     if (this.state.expanded === item) {
       valExp = true;
@@ -62,7 +62,7 @@ class DemoItem extends Component {
 
   render() {
     var todoEntries = this.props.entries;
-    var listItems = todoEntries.map((p, i) => this.createTasks2(p, i));
+    var listItems = todoEntries.map((p, i) => this.createTasks(p, i));
 
     return <div>{listItems}</div>;
   }
