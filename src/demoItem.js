@@ -82,12 +82,7 @@ class DemoItem extends Component {
     var todoEntries = this.props.entries;
     var listItems = todoEntries.map((p, i) => this.createTasks2(p, i));
 
-    return (
-      <div>
-        <p>Item</p>
-        <ul>{listItems}</ul>
-      </div>
-    );
+    return <div>{listItems}</div>;
   }
 }
 
