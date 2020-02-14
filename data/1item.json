@@ -1,0 +1,12 @@
+{
+  "CityStart": "ORY",
+  "CityStop": "BCN",
+  "HourStart": "13:15",
+  "HourStop": "15:00",
+  "DureeFlight": "01:45",
+  "NbEscales": "0",
+  "TypeFlight": "aller-retour",
+  "Price": "110",
+  "Currency": "€",
+  "Company": "Ryanair"
+}
