@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DemoItem from "./demoItem";
+import data from "../data/2items.json";
 
 class Demo extends Component {
   constructor(props) {
@@ -10,12 +11,14 @@ class Demo extends Component {
   }
 
   render() {
+    console.log({ data });
     return (
       <div>
-        <DemoItem entries={this.state.listItem} />
+        <DemoItem entries={data} />
       </div>
     );
   }
 }
+//        <DemoItem entries={this.state.listItem} />
 
 export default Demo;
