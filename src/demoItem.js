@@ -20,13 +20,8 @@ class DemoItem extends Component {
     event: React.ChangeEvent<{}>,
     isExpanded: boolean
   ) => {
-    //    setExpanded(isExpanded ? panel : false);
     console.log("-----");
-    // console.log("obj", panel);
-    //  console.log("onChange: " + typeof panel + " - " + JSON.stringify(panel));
-    // console.log(panel.item);
     const valueExpanded = this.state.expanded;
-    // console.log("expanded avant changement: " + valueExpanded);
     if (this.state.expanded === panel.item) {
       this.setState({
         expanded: false
@@ -36,28 +31,15 @@ class DemoItem extends Component {
         expanded: panel.item
       });
     }
-    //  console.log("expanded apres changement: " + this.state.expanded);
   };
 
-  createTasks(item, i) {
-    console.log(i);
-    return <button key={i}>{item}</button>;
-  }
-
   createTasks2(item, i) {
-    console.log("Task2: " + item + " - " + i);
-    console.log("objTask2", item);
-    console.log("expanded avant comparaison : " + this.state.expanded);
     valExp = false;
     if (this.state.expanded === item) {
-      console.log("valeur identiques");
       valExp = true;
     } else {
       valExp = false;
-      console.log("valeurs differentes");
     }
-    //    const valExp = this.state.expanded === { item } ? true : false;
-    console.log("Valeur de Expanded pour item: " + item + " - " + valExp);
     return (
       <ExpansionPanel
         key={i}
